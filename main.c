@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Utility function to swap values at two indices in an array
+int i,j;
 void swap(int arr[], int i, int j)
 {
     int temp = arr[i];
@@ -8,21 +8,20 @@ void swap(int arr[], int i, int j)
     arr[j] = temp;
 }
 
-// Recursive function to perform selection sort on subarray `arr[i…n-1]`
+
 void selectionSort(int arr[], int i, int n)
 {
-    // find the minimum element in the unsorted subarray `[i…n-1]`
-    // and swap it with `arr[i]`
+   
     int min = i;
-    for (int j = i + 1; j < n; j++)
+    for (j = i + 1; j < n; j++)
     {
-        // if `arr[j]` is less, then it is the new minimum
+    
         if (arr[j] < arr[min]) {
-            min = j;    // update the index of minimum element
+            min = j;    
         }
     }
 
-    // swap the minimum element in subarray `arr[i…n-1]` with `arr[i]`
+    
     swap(arr, min, i);
 
     if (i + 1 < n) {
@@ -30,17 +29,17 @@ void selectionSort(int arr[], int i, int n)
     }
 }
 
-// Function to print `n` elements of array `arr`
+
 void printArray(int arr[], int n)
 {
-    for (int i = 0; i < n; i++) {
+    for ( i = 0; i < n; i++) {
         printf("%d ", arr[i]);
     }
 }
 
 int main()
 {
-    int arr[] = { 3, 5, 8, 4, 1, 9, -2 };
+    int arr[] = { 3, 5, 8, 4, 1, 9,0,1,17,78 -2 };
     int n = sizeof(arr) / sizeof(arr[0]);
     printArray(arr, n);
     printf("\n");
